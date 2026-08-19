@@ -1,0 +1,5 @@
+[
+{"name":"Player","status":"Пользователь"},
+{"name":"Admin","status":"Администратор"},
+{"name":"VIP","status":"VIP"}
+]

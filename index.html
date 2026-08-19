@@ -1,150 +1,38 @@
 <!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Игровой портал</title>
-  <meta name="description" content="Игровой портал — мониторинг Counter-Strike 1.6 сервера">
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CS16 Project — Главная</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="page-bg"></div>
-
-  <header class="topbar">
-    <div class="topbar-inner">
-      <a class="brand" href="#home">basebuilder14.ru</a>
-      <nav class="topnav">
-        <a href="#home">Форум</a>
-        <a href="#users">Пользователи</a>
-        <a href="#news">Новости</a>
-        <a href="#admins">Администраторы</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="layout" id="home">
-    <aside class="left-column">
-      <section class="profile-card panel">
-        <div class="avatar">
-          <div class="avatar-head"></div>
-          <div class="avatar-body"></div>
-        </div>
-      </section>
-
-      <section class="panel navigation">
-        <div class="panel-title">Навигация</div>
-        <a href="#home">Главная</a>
-        <a href="#shop">Магазин</a>
-        <a href="#forum">Форум/Сервера</a>
-        <a href="#news">Новости</a>
-        <a href="#bans">Банлист</a>
-        <a href="#admins">Администраторы</a>
-        <a href="#events">События проекта</a>
-        <a href="#complaints">Жалобы</a>
-      </section>
-    </aside>
-
-    <section class="center-column">
-      <section class="panel auth-panel">
-        <div class="auth-box">
-          <div class="panel-title">Авторизация</div>
-          <form id="loginForm">
-            <input id="login" autocomplete="username" placeholder="Логин" required>
-            <input id="password" type="password" autocomplete="current-password" placeholder="Пароль" required>
-            <div class="auth-actions">
-              <button type="submit">Авторизоваться</button>
-              <button type="button" class="secondary" id="forgotBtn">Забыл пароль</button>
-            </div>
-          </form>
-        </div>
-
-        <div class="register-box">
-          <div class="panel-title">Регистрация</div>
-          <form id="registerForm">
-            <input id="regLogin" placeholder="Логин" required>
-            <input id="regPassword" type="password" placeholder="Пароль" required>
-            <input id="regPassword2" type="password" placeholder="Повторите пароль" required>
-            <input id="regEmail" type="email" placeholder="E-mail (указывайте настоящий)" required>
-            <button type="submit">Зарегистрироваться</button>
-          </form>
-        </div>
-      </section>
-
-      <section class="panel server-panel" id="servers">
-        <div class="panel-title">Сервера</div>
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th class="num">#</th>
-                <th>Название</th>
-                <th>Игроков</th>
-                <th>Карта</th>
-                <th>IP</th>
-              </tr>
-            </thead>
-            <tbody id="serverRows">
-              <tr>
-                <td class="num">1</td>
-                <td colspan="4" class="loading">Получаем информацию о сервере…</td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="server-count" id="serverCount">Загрузка…</div>
-        </div>
-      </section>
-
-      <section class="panel stats-panel" id="stats">
-        <div class="panel-title">Статистика</div>
-        <div class="stats-grid">
-          <div>
-            <p>Всего пользователей: <b id="usersCount">0</b></p>
-            <p>Личных сообщений: <b>0</b></p>
-            <p>Сообщений в чате: <b>0</b></p>
-            <p>Заявок на разбан: <b>0</b></p>
-          </div>
-          <div>
-            <p>Тем на форуме: <b>0</b></p>
-            <p>Ответов на форуме: <b>0</b></p>
-            <p>Новостей: <b>0</b></p>
-            <p>Комментариев к новостям: <b>0</b></p>
-          </div>
-          <div>
-            <p>Игровых серверов: <b>1</b></p>
-            <p>Привилегированных: <b>0</b></p>
-            <p>Банов на серверах: <b>0</b></p>
-            <p>Игроков в статистике: <b id="statPlayers">0</b></p>
-          </div>
-        </div>
-      </section>
-    </section>
-
-    <aside class="right-column">
-      <section class="panel side-info">
-        <div class="panel-title">Сервер</div>
-        <div class="server-mini">
-          <span class="status-dot" id="statusDot"></span>
-          <div>
-            <strong id="miniName">Загрузка…</strong>
-            <span id="miniStatus">Проверяем сервер</span>
-          </div>
-        </div>
-        <button class="connect-btn" id="connectBtn">Подключиться</button>
-      </section>
-    </aside>
-  </main>
-
-  <footer>
-    <span>Работает на GameCMS</span>
-    <span>basebuilder14.ru</span>
-  </footer>
-
-  <div class="mascot">
-    <img src="assets/mascot.jpg" alt="">
-  </div>
-
-  <div class="toast" id="toast"></div>
-
-  <script src="app.js"></script>
-</body>
-</html>
+<header class="topbar"><div class="container nav">
+<a class="logo" href="index.html">CS16<span>PROJECT</span></a>
+<nav><a href="forum.html">Форум</a><a href="users.html">Пользователи</a><a href="news.html">Новости</a><a href="admins.html">Администраторы</a></nav>
+<button class="menu" onclick="toggleNav()">☰</button></div></header>
+<div class="container layout">
+<aside class="sidebar">
+<h3>Навигация</h3>
+<a class="active" href="index.html">Главная</a>
+<a href="shop.html">Магазин</a><a href="cases.html">Магазин кейсов</a>
+<a href="forum.html">Форум / Сервера</a><a href="news.html">Новости</a>
+<a href="banlist.html">Банлист</a><a href="admins.html">Администраторы</a>
+<a href="events.html">События проекта</a><a href="complaints.html">Жалобы</a>
+</aside>
+<main>
+<section class="card auth"><h2>Авторизация</h2><form id="loginForm">
+<input placeholder="Логин" required><input type="password" placeholder="Пароль" required>
+<label class="remember"><input type="checkbox"> Запомнить меня</label><button>Войти</button>
+<a class="small" href="#">Забыл пароль</a></form></section>
+<section class="card"><div class="title-row"><h2>Сервера</h2><span class="online-dot">● Онлайн</span></div>
+<div class="table-wrap"><table><thead><tr><th>Название</th><th>Игроков</th><th>Карта</th><th>IP</th></tr></thead><tbody id="servers"></tbody></table></div></section>
+<section class="card"><h2>Регистрация</h2><form id="registerForm">
+<input placeholder="Логин" required><input type="password" placeholder="Пароль" required>
+<input type="password" placeholder="Повторите пароль" required><input type="email" placeholder="E-mail" required>
+<button>Зарегистрироваться</button></form></section>
+</main>
+</div>
+<footer>CS16 PROJECT · Сделано для собственного игрового проекта</footer>
+<script src="js/main.js"></script>
+</body></html>
